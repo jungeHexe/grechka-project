@@ -1,5 +1,5 @@
-import {Link} from "react-router-dom";
-import React, {} from "react";
+import {Link} from 'react-router-dom';
+import React, {} from 'react';
 
 export interface BreadcrumbItem {
   name: string;
@@ -7,7 +7,6 @@ export interface BreadcrumbItem {
 }
 
 export default function Breadcrumbs({breadcrumbs}: {breadcrumbs: BreadcrumbItem[]}) {
-
   return (
     <nav>
       {breadcrumbs?.map((crumb: BreadcrumbItem, index: number) => (
