@@ -1,15 +1,20 @@
 @import '~bootstrap/scss/bootstrap';
 
+a {
+  text-decoration: none;
+}
+
 .container {
   --color-text: #2b2b2b;
   --color-background: rgba(213, 213, 213, 0.67);
   --color-block: #ffffff;
+  --color-border: #c5c5c5;
 }
 
-.container.dark {
+.container--dark {
   --color-text: #ffffff;
   --color-background: #2b2b2b;
-  --color-block: #222222
+  --color-block: #222222;
 }
 
 .container {
@@ -26,18 +31,70 @@
   background: var(--color-background);
 }
 
-aside {
+.container__aside {
   height: 100%;
   width: 100%;
   background-color: var(--color-block);
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
-.mr-05 {
+.container__margin-right--05 {
   margin-right: 0.5rem;
 }
 
-svg {
+.container__svg {
   vertical-align: unset;
+}
+
+.card-block {
+  background-color: var(--color-block);
+  color: inherit;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  width: calc(100% - 6rem);
+  margin: 3rem;
+  position: relative;
+
+  .card-block__container {
+    overflow: auto;
+    position: relative;
+    max-height: 65vh;
+    height: 65vh;
+    min-height: 65vh;
+    padding-right: 2rem;
+  }
+}
+
+.card {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  background-color: var(--color-block);
+  color: inherit;
+  border-color: var(--color-border);
+}
+
+header {
+  background-color: var(--color-block);
+  color: inherit;
+  height: auto;
+  padding: 1rem 3rem;
+  display: flex;
+  text-align: center;
+  font-size: 25px;
+  line-height: 25px;
+}
+
+.button--go-back {
+  margin: auto 3rem auto 0;
+  cursor: pointer;
+}
+
+.form-control {
+  color: var(--color-text);
+  background-color: var(--color-block);
+
+  &:focus {
+    color: var(--color-text);
+    background-color: var(--color-block);
+  }
 }
