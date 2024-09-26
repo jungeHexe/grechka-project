@@ -3,13 +3,44 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import CardList from "./components/CardList";
+import SearchResult from "./components/SearchResult";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <CardList />,
+      },
+      {
+        path: "cat/:categoryId",
+        element: <CardList />,
+        children: [
+          {
+            path: "subcat/:subcategoryId",
+            element: <CardList />,
+          },
+        ]
+      },
+      {
+        path: "search",
+        element: <SearchResult />,
+      },
+    ],
+  },
+]);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
